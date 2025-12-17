@@ -9,13 +9,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
-import java.util.Objects;
+import static com.moovintwo.starport.UUIDs.*;
 
 
 public class MessageListener implements Listener {
-
-    private static final String Deplo_UUID = "1ad8c3cc-7f2f-4595-8b7e-f1708103eafa";
-    private static final String Karma_UUID = "e7f27e9a-16f1-46ac-b8dd-aa573379ed14";
 
 
     @EventHandler(priority = EventPriority.NORMAL)
@@ -34,10 +31,11 @@ public class MessageListener implements Listener {
                 rank = Component.text("[ Member ] ", NamedTextColor.BLUE, TextDecoration.BOLD);
             }
 
+            Component playerHead = MiniMessage.miniMessage().deserialize("<head:" + player.getName() + "> ");
             Component nameComp = Component.text(player.getName(), NamedTextColor.BLUE);
             Component separator = Component.text(" | ", NamedTextColor.GRAY);
 
-            return Component.textOfChildren(rank, nameComp, separator, message);
+            return Component.textOfChildren(rank, playerHead, nameComp, separator, message);
         });
 
     }
