@@ -21,8 +21,12 @@ public class MessageListener implements Listener {
         event.renderer((player, playerName, message, viewer) -> {
 
             Component rank;
-            if (player.isOp()) {
+            if (player.getUniqueId().toString().equals(Moovintwo_UUID)) {
                 rank = Component.text("[ Owner ] ", NamedTextColor.DARK_PURPLE, TextDecoration.BOLD);
+            } else if (player.getUniqueId().toString().equals(Alex_UUID)) {
+                rank = Component.text("[ Co-Owner ] ", NamedTextColor.DARK_RED, TextDecoration.BOLD);
+            } else if (player.getUniqueId().toString().equals(ThreadedFlowey)) {
+                rank = Component.text("[ Developer ] ", NamedTextColor.DARK_RED, TextDecoration.BOLD);
             } else if (player.getUniqueId().toString().equals(Deplo_UUID)) {
                 rank = Component.text("[ Admin ] ", NamedTextColor.GREEN, TextDecoration.BOLD);
             } else if (player.getUniqueId().toString().equals(Karma_UUID)) {
@@ -32,7 +36,7 @@ public class MessageListener implements Listener {
             }
 
             Component playerHead = MiniMessage.miniMessage().deserialize("<head:" + player.getName() + "> ");
-            Component nameComp = Component.text(player.getName(), NamedTextColor.BLUE);
+            Component nameComp = Component.text(player.getName());
             Component separator = Component.text(" | ", NamedTextColor.GRAY);
 
             return Component.textOfChildren(rank, playerHead, nameComp, separator, message);

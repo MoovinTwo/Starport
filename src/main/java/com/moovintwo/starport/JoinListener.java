@@ -21,8 +21,12 @@ public class JoinListener implements Listener {
 
         Player player = event.getPlayer();
         Component rank;
-        if (player.isOp()) {
+        if (player.getUniqueId().toString().equals(Moovintwo_UUID)) {
             rank = Component.text("[ Owner ] ", NamedTextColor.DARK_PURPLE, TextDecoration.BOLD);
+        } else if (player.getUniqueId().toString().equals(Alex_UUID)) {
+            rank = Component.text("[ Co-Owner ] ", NamedTextColor.DARK_RED, TextDecoration.BOLD);
+        } else if (player.getUniqueId().toString().equals(ThreadedFlowey)) {
+            rank = Component.text("[ Developer ] ", NamedTextColor.LIGHT_PURPLE, TextDecoration.BOLD);
         } else if (player.getUniqueId().toString().equals(Deplo_UUID)) {
             rank = Component.text("[ Admin ] ", NamedTextColor.GREEN, TextDecoration.BOLD);
         } else if (player.getUniqueId().toString().equals(Karma_UUID)) {
