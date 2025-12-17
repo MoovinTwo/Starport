@@ -1,0 +1,9 @@
+name: Starport
+version: '0.1-Testing'
+main: com.moovintwo.starport.Starport
+api-version: '1.21'
+prefix: Starport
+load: STARTUP
+authors: [Moovintwo]
+description: The Core Plugin for the Starrail Server
+website: starport.starrail.net
