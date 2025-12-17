@@ -1,9 +1,9 @@
 package com.moovintwo.starport;
 
 import com.moovintwo.starport.Commands.CoreCMD;
+import com.moovintwo.starport.Data.Ranks;
 import io.papermc.paper.command.brigadier.Commands;
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Starport extends JavaPlugin {
@@ -12,6 +12,8 @@ public final class Starport extends JavaPlugin {
     public void onEnable() {
 
         getLogger().info("Starport Initialized");
+
+        Ranks.init();
 
 
         getServer().getPluginManager().registerEvents(new JoinListener(), this);
