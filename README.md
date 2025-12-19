@@ -7,3 +7,6 @@ Starport is a WIP core plugin for the Starrail SMP Minecraft Server. This plugin
 - Added the /Starport Command with a Version argument for some basic plugin information
 - Join Messages
 - Chat Ranks (Hard Coded to UUID)
+
+### Planned Content
+- Rank Management
